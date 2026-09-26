@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Rosa Raia — Portfolio</title>
+  <meta name="description" content="Rosa Raia — operations and KPI analysis, Excel, Python and SQL. Portfolio, experience and contacts." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="./styles.css" />
+
+  <link rel="preload" as="image" href="./frames/b_000.webp" />
+
+  <!-- pick the language before first paint: saved choice, else the browser's -->
+  <script>
+    (function () {
+      var d = document.documentElement, l = null;
+      d.classList.remove('no-js');
+      try { l = localStorage.getItem('lang'); } catch (e) {}
+      if (l !== 'en' && l !== 'it') l = /^it\b/i.test(navigator.language || '') ? 'it' : 'en';
+      d.lang = l;
+    })();
+  </script>
+</head>
+<body>
+
+  <header class="nav">
+    <a class="nav-logo" href="#top">Rosa Raia</a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#work"><span data-lang="en">Work</span><span data-lang="it">Lavori</span></a>
+      <a href="#about"><span data-lang="en">About</span><span data-lang="it">Chi sono</span></a>
+      <a href="#contact"><span data-lang="en">Contact</span><span data-lang="it">Contatti</span></a>
+      <button class="lang-toggle" type="button" id="langToggle" aria-label="Switch language / Cambia lingua">
+        <span data-l="en">EN</span><span class="lang-sep" aria-hidden="true">/</span><span data-l="it">IT</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="top" aria-label="Introduction">
+
+      <div class="note">
+        <p class="note-name"><span data-lang="en">I'm</span><span data-lang="it">Sono</span> <em>Rosa Raia</em></p>
+        <p class="note-hint">
+          <span class="cue" aria-hidden="true"><span class="cue-tap"></span></span>
+          <span class="hint-desktop"><span data-lang="en">Click to call me !</span><span data-lang="it">Cliccami per chiamarmi !</span></span>
+          <span class="hint-touch"><span data-lang="en">Tap to call me !</span><span data-lang="it">Toccami per chiamarmi !</span></span>
+        </p>
+      </div>
+
+      <div class="stage" id="stage" role="button" tabindex="0" aria-label="Say hi to Rosa">
+        <canvas id="character" role="img"
+          aria-label="Illustrated Rosa working at her laptop. She waves hello and points down to the portfolio."></canvas>
+        <p class="msg" id="msg" aria-live="polite"></p>
+      </div>
+
+    </section>
+
+    <!-- ============================ WORK ============================ -->
+    <section class="section work" id="work" aria-labelledby="work-title">
+      <div class="wrap">
+        <p class="eyebrow">01 — <span data-lang="en">Work</span><span data-lang="it">Lavori</span></p>
+        <h2 class="section-title" id="work-title">
+          <span data-lang="en">Projects &amp; <em>experience</em></span>
+          <span data-lang="it">Progetti &amp; <em>esperienze</em></span>
+        </h2>
+
+        <div class="projects">
+        <article class="project" id="project-tino">
+          <div class="project-summary">
+            <div class="project-head">
+              <p class="project-meta">
+                <span data-lang="en">Personal project · 2024 – ongoing</span>
+                <span data-lang="it">Progetto personale · 2024 – in corso</span>
+              </p>
+              <h3 class="project-title">
+                <span data-lang="en">Gestionale Tino — management dashboard for a gym</span>
+                <span data-lang="it">Gestionale Tino — dashboard gestionale per una palestra</span>
+              </h3>
+              <ul class="tags">
+                <li>Python</li>
+                <li>SQLite</li>
+                <li><span data-lang="en">Management control</span><span data-lang="it">Controllo di gestione</span></li>
+                <li>KPI</li>
+              </ul>
+            </div>
+            <ul class="bullets" data-lang="en">
+              <li>Designed and built, in Python and SQLite, a financial management system for a commercial business (a gym).</li>
+              <li>Cost-accounting modules on contribution margin (CM I and CM II) and automated tax calculation under the Italian flat-rate regime.</li>
+              <li>Tracking of operational indicators: client renewal rate, FTE saturation and payment punctuality.</li>
+            </ul>
+            <ul class="bullets" data-lang="it">
+              <li>Progettazione e sviluppo, in Python e SQLite, di un sistema di gestione economico-finanziaria per un'attività commerciale (palestra).</li>
+              <li>Moduli di contabilità analitica su margine di contribuzione (MdC I e MdC II) e calcolo automatizzato della tassazione in regime forfettario.</li>
+              <li>Monitoraggio di indicatori operativi: tasso di rinnovo dei clienti, saturazione dell'FTE e puntualità dei pagamenti.</li>
+            </ul>
+          </div>
+
+          <button class="project-toggle" type="button" aria-expanded="false" aria-controls="tino-details">
+            <span class="project-toggle-label when-closed">
+              <span data-lang="en">See how it works</span><span data-lang="it">Scopri come funziona</span>
+            </span>
+            <span class="project-toggle-label when-open">
+              <span data-lang="en">Close</span><span data-lang="it">Chiudi</span>
+            </span>
+            <span class="project-toggle-icon" aria-hidden="true"></span>
+          </button>
+
+          <div class="project-details" id="tino-details" inert>
+            <div class="project-details-inner">
+
+              <p class="details-lead details-lead--first" data-lang="en">A desktop app for a personal-training gym: the main program records clients, memberships, instalments and expenses; a twin <strong>read-only</strong> analysis app reads the same database and turns it into KPIs, margins and projections, across eight tabs (overview, revenue, expenses, receivables, retention, margins by membership type, gym saturation, client frequency).</p>
+              <p class="details-lead details-lead--first" data-lang="it">Un'applicazione desktop per una palestra di personal training: il programma principale registra clienti, abbonamenti, rateizzazioni e spese; un programma gemello di analisi, <strong>in sola lettura</strong>, legge lo stesso database e lo trasforma in KPI, margini e proiezioni, su otto schede (panoramica, fatturato, spese, crediti, retention, margini per tipologia, saturazione della palestra, frequenza clienti).</p>
+
+              <!-- two-level margin cascade (schematic, no real figures) -->
+              <figure class="cascade" aria-label="Two-level contribution margin">
+                <figcaption class="cellmap-title"><span data-lang="en">How each membership type's margin is built</span><span data-lang="it">Come si costruisce il margine di ogni tipologia</span></figcaption>
+                <div class="cascade-row">
+                  <span class="cascade-label"><span data-lang="en">Revenue</span><span data-lang="it">Ricavi</span></span>
+                  <span class="cascade-track"><i class="cascade-bar cascade-bar--rev" style="left:0;width:100%"></i></span>
+                  <span class="cascade-note"><span data-lang="en">collected by the type</span><span data-lang="it">incassati dalla tipologia</span></span>
+                </div>
+                <div class="cascade-row">
+                  <span class="cascade-label"><span data-lang="en">− Variable costs</span><span data-lang="it">− Costi variabili</span></span>
+                  <span class="cascade-track"><i class="cascade-bar cascade-bar--cost" style="left:80%;width:20%"></i></span>
+                  <span class="cascade-note"><span data-lang="en">cost per day × occupancy days</span><span data-lang="it">costo al giorno × giorni di occupazione</span></span>
+                </div>
+                <div class="cascade-row cascade-row--result">
+                  <span class="cascade-label"><span data-lang="en">= CM I</span><span data-lang="it">= MdC I</span></span>
+                  <span class="cascade-track"><i class="cascade-bar cascade-bar--m1" style="left:0;width:80%"></i></span>
+                  <span class="cascade-note"><span data-lang="en">also per unit, vs list price</span><span data-lang="it">anche unitario, sul listino</span></span>
+                </div>
+                <div class="cascade-row">
+                  <span class="cascade-label"><span data-lang="en">− Fixed costs</span><span data-lang="it">− Costi fissi</span></span>
+                  <span class="cascade-track"><i class="cascade-bar cascade-bar--cost" style="left:52%;width:28%"></i></span>
+                  <span class="cascade-note"><span data-lang="en">same driver, only types that use the space</span><span data-lang="it">stesso driver, solo tipologie che usano la sala</span></span>
+                </div>
+                <div class="cascade-row cascade-row--result">
+                  <span class="cascade-label"><span data-lang="en">= CM II</span><span data-lang="it">= MdC II</span></span>
+                  <span class="cascade-track"><i class="cascade-bar cascade-bar--m2" style="left:0;width:52%"></i><i class="cascade-threshold" style="left:50%"><span>50%</span></i></span>
+                  <span class="cascade-note"><span data-lang="en">below 50% of revenue → red</span><span data-lang="it">sotto il 50% dei ricavi → rosso</span></span>
+                </div>
+                <p class="cascade-check">
+                  <span data-lang="en">Check: Σ CM II of every type = revenue − variable − fixed, to the cent.</span>
+                  <span data-lang="it">Verifica: Σ MdC II di tutte le tipologie = ricavi − variabili − fissi, al centesimo.</span>
+                  <span class="cascade-scheme"><span data-lang="en">Schematic proportions</span><span data-lang="it">Proporzioni schematiche</span></span>
+                </p>
+              </figure>
+
+              <ul class="tags tags--stack">
+                <li>Python</li><li>SQLite</li><li>Tkinter</li><li>Matplotlib</li><li>Google Calendar API</li>
+              </ul>
+
+              <div class="logic-grid">
+
+                <section class="logic">
+                  <p class="logic-num">01</p>
+                  <h4>
+                    <span data-lang="en">Fixed vs variable costs</span>
+                    <span data-lang="it">Costi fissi e variabili</span>
+                  </h4>
+                  <p data-lang="en">Every expense category is flagged <em>F</em> or <em>V</em> directly from the Expenses screen, so the classification lives in the data, not in the code. Variable costs are the ones that move with how much the gym is used (utilities, consumables); everything else is fixed. A category that hasn't been classified yet counts as fixed — the prudent default.</p>
+                  <p data-lang="it">Ogni categoria di spesa viene classificata <em>F</em> o <em>V</em> direttamente dalla schermata Spese: la classificazione sta nei dati, non nel codice. Sono variabili i costi che si muovono con l'utilizzo della palestra (bollette, materiali di consumo); tutto il resto è fisso. Una categoria non ancora classificata è considerata fissa, per prudenza.</p>
+                </section>
+
+                <section class="logic">
+                  <p class="logic-num">02</p>
+                  <h4>
+                    <span data-lang="en">Allocating variable costs</span>
+                    <span data-lang="it">Ripartizione dei costi variabili</span>
+                  </h4>
+                  <p data-lang="en">The allocation driver is <strong>occupancy days</strong>: how many days of gym access each membership type sold in the period. A monthly plan weighs less than a yearly one, even at the same number of sales.</p>
+                  <p data-lang="it">Il driver di ripartizione sono i <strong>giorni di occupazione</strong>: quanti giorni di accesso alla palestra ha venduto ogni tipologia di abbonamento nel periodo. Un mensile pesa meno di un annuale, anche a parità di vendite.</p>
+                  <div class="formula">
+                    <p><span data-lang="en">Occupancy days</span><span data-lang="it">Giorni occupazione</span> = <span data-lang="en">sales × plan length (days)</span><span data-lang="it">vendite × durata (giorni)</span></p>
+                    <p><span data-lang="en">Variable cost per day</span><span data-lang="it">Costo variabile al giorno</span> = <span data-lang="en">total variable ÷ total occupancy days</span><span data-lang="it">variabili totali ÷ giorni totali</span></p>
+                    <p><span data-lang="en">Allocated variable</span><span data-lang="it">Variabili allocati</span> = <span data-lang="en">cost per day × days of the type</span><span data-lang="it">costo al giorno × giorni della tipologia</span></p>
+                  </div>
+                  <p class="logic-note" data-lang="en">The same result is also shown per unit: unit variable cost = allocated ÷ sales, and unit CM I = list price − unit variable cost, to compare types on a like-for-like basis.</p>
+                  <p class="logic-note" data-lang="it">Lo stesso dato è mostrato anche per unità: costo variabile unitario = allocati ÷ vendite, e MdC I unitario = prezzo di listino − costo variabile unitario, per confrontare le tipologie a parità di base.</p>
+                </section>
+
+                <section class="logic">
+                  <p class="logic-num">03</p>
+                  <h4>
+                    <span data-lang="en">Fixed costs &amp; two-level margin</span>
+                    <span data-lang="it">Costi fissi e margine a due livelli</span>
+                  </h4>
+                  <p data-lang="en">Fixed costs are allocated with the same occupancy-day logic, but only across types that physically use the space: supplements and online coaching are left out of both the denominator and the allocation.</p>
+                  <p data-lang="it">I costi fissi sono ripartiti con la stessa logica dei giorni di occupazione, ma solo sulle tipologie che occupano fisicamente la palestra: integratori e coaching online restano fuori sia dal denominatore sia dall'allocazione.</p>
+                  <div class="formula">
+                    <p><span data-lang="en">CM I</span><span data-lang="it">MdC I</span> = <span data-lang="en">revenue − allocated variable</span><span data-lang="it">ricavi − variabili allocati</span></p>
+                    <p><span data-lang="en">CM II</span><span data-lang="it">MdC II</span> = <span data-lang="en">CM I − allocated fixed</span><span data-lang="it">MdC I − fissi allocati</span></p>
+                    <p><span data-lang="en">CM %</span><span data-lang="it">MdC %</span> = <span data-lang="en">margin ÷ revenue</span><span data-lang="it">margine ÷ ricavi</span></p>
+                  </div>
+                  <p class="logic-note" data-lang="en"><strong>Built-in consistency check:</strong> the sum of every type's CM II must equal revenue − variable − fixed costs (to the cent), otherwise the app flags an allocation error. Types with CM II below 50% are highlighted in red.</p>
+                  <p class="logic-note" data-lang="it"><strong>Verifica di coerenza integrata:</strong> la somma degli MdC II di tutte le tipologie deve coincidere (al centesimo) con ricavi − costi variabili − costi fissi, altrimenti l'app segnala un errore di allocazione. Le tipologie con MdC II sotto il 50% sono evidenziate in rosso.</p>
+                </section>
+
+                <section class="logic">
+                  <p class="logic-num">04</p>
+                  <h4>
+                    <span data-lang="en">Year-end projections &amp; EBIT</span>
+                    <span data-lang="it">Proiezioni a fine anno ed EBIT</span>
+                  </h4>
+                  <p data-lang="en">Projected figures to 31 December sit next to the actual year-to-date ones, so the gap is always visible.</p>
+                  <p data-lang="it">I valori proiettati al 31 dicembre sono affiancati a quelli reali da inizio anno, così lo scostamento è sempre visibile.</p>
+                  <div class="formula">
+                    <p><span data-lang="en">Projected revenue</span><span data-lang="it">Ricavi proiettati</span> = <span data-lang="en">collected YTD + expected renewals + instalments still due</span><span data-lang="it">incassato a oggi + rinnovi attesi + rate ancora da incassare</span></p>
+                    <p><span data-lang="en">Projected costs</span><span data-lang="it">Costi proiettati</span> = <span data-lang="en">average monthly spend YTD × 12</span><span data-lang="it">spesa media mensile a oggi × 12</span></p>
+                    <p><span data-lang="en">Projected EBIT</span><span data-lang="it">EBIT proiettato</span> = <span data-lang="en">projected revenue − projected costs</span><span data-lang="it">ricavi proiettati − costi proiettati</span></p>
+                    <p><span data-lang="en">Projected net profit</span><span data-lang="it">Utile netto proiettato</span> = <span data-lang="en">EBIT − projected taxes</span><span data-lang="it">EBIT − tasse proiettate</span></p>
+                  </div>
+                  <p class="logic-note" data-lang="en"><strong>Expected renewals:</strong> for each active monthly, quarterly or half-yearly client, the app counts how many times their cycle recurs between today and 31/12, starting from their current expiry, at the price they pay now. <strong>Taxes</strong> follow the flat-rate regime: 78% profitability coefficient, INPS contributions (26.07%) deducted first, then the 15% substitute tax.</p>
+                  <p class="logic-note" data-lang="it"><strong>Rinnovi attesi:</strong> per ogni cliente attivo con abbonamento mensile, trimestrale o semestrale, l'app conta quante volte il suo ciclo si ripete tra oggi e il 31/12, a partire dalla scadenza attuale, al prezzo applicato oggi. <strong>Le tasse</strong> seguono il regime forfettario: coefficiente di redditività 78%, contributi INPS (26,07%) dedotti prima, poi imposta sostitutiva al 15%.</p>
+                </section>
+
+              </div>
+
+              <div class="kpi-more">
+                <h4 class="sub-title"><span data-lang="en">Other KPIs and how they're built</span><span data-lang="it">Altri KPI e come sono costruiti</span></h4>
+                <ul class="kpi-list" data-lang="en">
+                  <li><strong>Accrued revenue</strong> — instalment plans are spread evenly over the months between start and expiry, so a single month isn't inflated by the full value of a plan that will actually be paid over time.</li>
+                  <li><strong>Renewal rate</strong> — share of memberships expiring in the period that the same client renews within 30 days.</li>
+                  <li><strong>Receivables</strong> — net balance per client over their whole history (not per renewal, which would inflate the total), split into regular instalments, overdue, and left with an open balance.</li>
+                  <li><strong>Expected collections (3 months)</strong> — active memberships expiring in the next three months × price applied.</li>
+                  <li><strong>Gym saturation</strong> — bookings ÷ maximum capacity for every hourly slot, read from Google Calendar (read-only). Days with no bookings count as zero, so every slot has the same denominator; slots are classed as always free, always full or variable.</li>
+                  <li><strong>Clients that can still be taken on</strong> — a greedy allocation that fits new clients needing 3 slots a week on 3 different days, using only the seats guaranteed free even in the busiest week observed.</li>
+                  <li><strong>Client frequency</strong> — sessions per week per client, to spot the most loyal clients and the ones at risk of leaving.</li>
+                  <li><strong>Markdown report export</strong> — every KPI in one text report, ready for AI-assisted analysis and planning.</li>
+                </ul>
+                <ul class="kpi-list" data-lang="it">
+                  <li><strong>Fatturato di competenza</strong> — le rateizzazioni vengono spalmate in parti uguali sui mesi tra inizio e scadenza dell'abbonamento, così un singolo mese non si gonfia con l'intero valore di un pacchetto che in realtà arriverà diluito nel tempo.</li>
+                  <li><strong>Tasso di rinnovo</strong> — quota di abbonamenti scaduti nel periodo che lo stesso cliente rinnova entro 30 giorni.</li>
+                  <li><strong>Crediti</strong> — saldo netto per cliente su tutta la sua storia (non per singolo rinnovo, che gonfierebbe il totale), diviso in rateizzazioni regolari, non in regola e abbandoni con debito.</li>
+                  <li><strong>Incassi attesi (3 mesi)</strong> — abbonamenti attivi in scadenza nei prossimi tre mesi × prezzo applicato.</li>
+                  <li><strong>Saturazione della palestra</strong> — prenotati ÷ capienza massima per ogni fascia oraria, letti da Google Calendar (sola lettura). I giorni senza prenotazioni contano come zero, così ogni fascia ha lo stesso denominatore; le fasce sono classificate sempre libere, sempre piene o variabili.</li>
+                  <li><strong>Clienti acquisibili</strong> — un algoritmo greedy inserisce nuovi clienti da 3 slot a settimana in 3 giorni diversi, usando solo i posti liberi garantiti anche nella settimana più piena osservata.</li>
+                  <li><strong>Frequenza clienti</strong> — sessioni a settimana per cliente, per individuare i più fedeli e quelli a rischio abbandono.</li>
+                  <li><strong>Export del report in Markdown</strong> — tutti i KPI in un unico report testuale, pronto per analisi e pianificazione con il supporto dell'AI.</li>
+                </ul>
+              </div>
+
+              <button class="project-close" type="button" data-closes="tino-details">
+                <span data-lang="en">Close details</span><span data-lang="it">Chiudi dettagli</span>
+                <span aria-hidden="true">↑</span>
+              </button>
+
+            </div>
+          </div>
+        </article>
+
+        <article class="project" id="project-fx">
+          <div class="project-summary">
+            <div class="project-head">
+              <p class="project-meta">
+                <span data-lang="en">Work project · Currency exchange · 2025 – 2026</span>
+                <span data-lang="it">Progetto di lavoro · Cambio valuta · 2025 – 2026</span>
+              </p>
+              <h3 class="project-title">
+                <span data-lang="en">Currency demand forecasting — a three-level hybrid model</span>
+                <span data-lang="it">Previsione della domanda di valuta — modello ibrido a tre livelli</span>
+              </h3>
+              <ul class="tags">
+                <li>Python</li>
+                <li>pandas</li>
+                <li>MySQL</li>
+                <li><span data-lang="en">Forecasting</span><span data-lang="it">Previsioni</span></li>
+              </ul>
+            </div>
+            <ul class="bullets" data-lang="en">
+              <li>Forecasts, for every currency and for both buy and sell, how many transactions a branch will handle and the value exchanged, to plan banknote orders.</li>
+              <li>Each series is modelled at the level its data can support: daily, weekly or monthly, chosen automatically from how often that currency actually trades.</li>
+              <li>Seasonality, smoothing with bias correction and a min / base / max range, back-tested against the real results.</li>
+            </ul>
+            <ul class="bullets" data-lang="it">
+              <li>Prevede, per ogni valuta e sia in acquisto sia in vendita, quante operazioni farà una filiale e il controvalore scambiato, per pianificare gli ordini di banconote.</li>
+              <li>Ogni serie è modellata al livello che i suoi dati possono sostenere: giornaliero, settimanale o mensile, scelto in automatico in base a quanto spesso quella valuta viene davvero scambiata.</li>
+              <li>Stagionalità, smoothing con correzione del bias e forchetta minimo / base / massimo, verificati sui risultati reali.</li>
+            </ul>
+          </div>
+
+          <button class="project-toggle" type="button" aria-expanded="false" aria-controls="fx-details">
+            <span class="project-toggle-label when-closed">
+              <span data-lang="en">See how it works</span><span data-lang="it">Scopri come funziona</span>
+            </span>
+            <span class="project-toggle-label when-open">
+              <span data-lang="en">Close</span><span data-lang="it">Chiudi</span>
+            </span>
+            <span class="project-toggle-icon" aria-hidden="true"></span>
+          </button>
+
+          <div class="project-details" id="fx-details" inert>
+            <div class="project-details-inner">
+
+              <p class="details-lead details-lead--first" data-lang="en">A currency-exchange branch has to order the right banknotes at the right time: too few and customers are turned away, too many and cash sits idle. The model turns years of transactions into forward-looking volumes per currency, per side, at the level of detail each currency deserves.</p>
+              <p class="details-lead details-lead--first" data-lang="it">Una filiale di cambio valuta deve ordinare le banconote giuste al momento giusto: troppo poche e i clienti vanno via, troppe e il contante resta fermo. Il modello trasforma anni di transazioni in volumi previsti per valuta e per verso (acquisto/vendita), al livello di dettaglio che ogni valuta merita.</p>
+
+              <!-- pipeline diagram -->
+              <ol class="flow" aria-label="Pipeline">
+                <li><span class="flow-step">01</span><span data-lang="en">Excel exports → MySQL</span><span data-lang="it">Export Excel → MySQL</span></li>
+                <li><span class="flow-step">02</span><span data-lang="en">Full calendar grid</span><span data-lang="it">Griglia di calendario completa</span></li>
+                <li><span class="flow-step">03</span><span data-lang="en">Tier per series</span><span data-lang="it">Livello per serie</span></li>
+                <li><span class="flow-step">04</span><span data-lang="en">Seasonality</span><span data-lang="it">Stagionalità</span></li>
+                <li><span class="flow-step">05</span><span data-lang="en">Count × ticket</span><span data-lang="it">Operazioni × ticket</span></li>
+                <li><span class="flow-step">06</span><span data-lang="en">Min / base / max → Excel</span><span data-lang="it">Min / base / max → Excel</span></li>
+              </ol>
+
+              <ul class="tags tags--stack">
+                <li>Python</li><li>pandas</li><li>NumPy</li><li>SQLAlchemy</li><li>MySQL</li><li>Excel (openpyxl)</li>
+              </ul>
+
+              <div class="logic-grid">
+
+                <section class="logic logic--wide">
+                  <p class="logic-num">01</p>
+                  <h4>
+                    <span data-lang="en">Choosing the level: daily, weekly or monthly</span>
+                    <span data-lang="it">La scelta del livello: giornaliero, settimanale o mensile</span>
+                  </h4>
+                  <p data-lang="en">Forecasting a rarely traded currency day by day would just be forecasting noise. So every currency–side series is assigned a tier from its recent activity, and modelled at that granularity.</p>
+                  <p data-lang="it">Prevedere giorno per giorno una valuta scambiata di rado vorrebbe dire prevedere rumore. Per questo ogni serie valuta–verso riceve un livello in base alla sua attività recente, e viene modellata a quella granularità.</p>
+                  <div class="tiers">
+                    <div class="tier">
+                      <p class="tier-badge">A · <span data-lang="en">Daily</span><span data-lang="it">Giornaliero</span></p>
+                      <p data-lang="en">Last 180 days: active on at least 50% of days, with at least 2 transactions per active day.</p>
+                      <p data-lang="it">Ultimi 180 giorni: attiva in almeno il 50% dei giorni, con almeno 2 operazioni per giorno attivo.</p>
+                    </div>
+                    <div class="tier">
+                      <p class="tier-badge">B · <span data-lang="en">Weekly</span><span data-lang="it">Settimanale</span></p>
+                      <p data-lang="en">Otherwise, last 104 weeks: active in at least 25% of weeks, or at least 3 transactions per active week.</p>
+                      <p data-lang="it">Altrimenti, ultime 104 settimane: attiva in almeno il 25% delle settimane, oppure almeno 3 operazioni per settimana attiva.</p>
+                    </div>
+                    <div class="tier">
+                      <p class="tier-badge">C · <span data-lang="en">Monthly</span><span data-lang="it">Mensile</span></p>
+                      <p data-lang="en">Everything rarer. Daily forecasts are rolled up to weeks for weekly orders; tier C feeds monthly orders.</p>
+                      <p data-lang="it">Tutto ciò che è più raro. Le previsioni giornaliere vengono aggregate a settimana per gli ordini settimanali; il livello C alimenta gli ordini mensili.</p>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="logic">
+                  <p class="logic-num">02</p>
+                  <h4>
+                    <span data-lang="en">Seasonality</span>
+                    <span data-lang="it">Stagionalità</span>
+                  </h4>
+                  <p data-lang="en">One seasonal index per level: day of the week, ISO week of the year, or month. Missing days and weeks are filled with zeros first, so quiet periods count instead of disappearing.</p>
+                  <p data-lang="it">Un indice stagionale per livello: giorno della settimana, settimana ISO dell'anno o mese. Prima i giorni e le settimane mancanti vengono riempiti con zero, così i periodi di calma contano invece di sparire.</p>
+                  <div class="formula">
+                    <p><span data-lang="en">Share</span><span data-lang="it">Quota</span> = <span data-lang="en">period transactions ÷ year (or week) total</span><span data-lang="it">operazioni del periodo ÷ totale anno (o settimana)</span></p>
+                    <p><span data-lang="en">Index</span><span data-lang="it">Indice</span> = <span data-lang="en">median share across years ÷ average share</span><span data-lang="it">mediana della quota negli anni ÷ quota media</span></p>
+                  </div>
+                  <p class="logic-note" data-lang="en">Built on 2018, 2019, 2023 and 2024 — the pandemic years are left out on purpose, because tourism flows were not representative. The median resists one-off spikes, and indices are clipped between 0.2 and 5 so rare series can't explode.</p>
+                  <p class="logic-note" data-lang="it">Calcolata su 2018, 2019, 2023 e 2024: gli anni della pandemia sono esclusi di proposito, perché i flussi turistici non erano rappresentativi. La mediana resiste ai picchi isolati, e gli indici sono limitati tra 0,2 e 5 perché le serie rare non esplodano.</p>
+                </section>
+
+                <section class="logic">
+                  <p class="logic-num">03</p>
+                  <h4>
+                    <span data-lang="en">How many transactions</span>
+                    <span data-lang="it">Quante operazioni</span>
+                  </h4>
+                  <p data-lang="en">The count is deseasonalised, smoothed with an exponentially weighted moving average, then the season is put back. Every forecast is one step ahead: it only uses data available before the period it predicts.</p>
+                  <p data-lang="it">Il numero di operazioni viene destagionalizzato, smussato con una media mobile esponenziale (EWMA) e poi ristagionalizzato. Ogni previsione è a un passo: usa solo i dati disponibili prima del periodo che prevede.</p>
+                  <div class="formula">
+                    <p><span data-lang="en">Deseasonalised</span><span data-lang="it">Destagionalizzato</span> = <span data-lang="en">transactions ÷ seasonal index</span><span data-lang="it">operazioni ÷ indice stagionale</span></p>
+                    <p><span data-lang="en">Level</span><span data-lang="it">Livello</span> = <span data-lang="en">EWMA (α 0.35 daily, 0.4 weekly / monthly)</span><span data-lang="it">EWMA (α 0,35 giornaliero, 0,4 settimanale / mensile)</span></p>
+                    <p><span data-lang="en">Forecast</span><span data-lang="it">Previsione</span> = <span data-lang="en">level × seasonal index</span><span data-lang="it">livello × indice stagionale</span></p>
+                  </div>
+                </section>
+
+                <section class="logic logic--wide">
+                  <p class="logic-num">04</p>
+                  <h4>
+                    <span data-lang="en">Average ticket, bias correction and the range</span>
+                    <span data-lang="it">Ticket medio, correzione del bias e forchetta</span>
+                  </h4>
+                  <p data-lang="en">Volume is transactions × average ticket. The ticket gets its own EWMA, then a self-correction: the model looks at its own recent percentage errors and adjusts for any systematic over- or under-estimate.</p>
+                  <p data-lang="it">Il controvalore è operazioni × ticket medio. Il ticket ha la sua EWMA, poi un'autocorrezione: il modello guarda i propri errori percentuali recenti e compensa una sovra- o sottostima sistematica.</p>
+                  <div class="formula formula--cols">
+                    <p><span data-lang="en">Bias</span><span data-lang="it">Bias</span> = <span data-lang="en">rolling mean of past % errors (7 days · 4 weeks · 3 months), capped at ±30%</span><span data-lang="it">media mobile degli errori % passati (7 giorni · 4 settimane · 3 mesi), limitata a ±30%</span></p>
+                    <p><span data-lang="en">Corrected ticket</span><span data-lang="it">Ticket corretto</span> = <span data-lang="en">EWMA ticket × (1 − bias)</span><span data-lang="it">ticket EWMA × (1 − bias)</span></p>
+                    <p><span data-lang="en">Range</span><span data-lang="it">Forchetta</span> = <span data-lang="en">forecast count × 25th / 75th percentile of recent tickets</span><span data-lang="it">operazioni previste × 25° / 75° percentile dei ticket recenti</span></p>
+                    <p><span data-lang="en">Accuracy</span><span data-lang="it">Accuratezza</span> = <span data-lang="en">forecast − actual, in value and in %, on 2024–2025</span><span data-lang="it">previsto − reale, in valore e in %, sul 2024–2025</span></p>
+                  </div>
+                  <p class="logic-note" data-lang="en">The output is an Excel workbook ready for the ordering routine: tier of every series, weekly and monthly forecasts with min / base / max, the seasonality maps and every parameter used, so each run can be audited and repeated.</p>
+                  <p class="logic-note" data-lang="it">Il risultato è un file Excel pronto per gli ordini: livello di ogni serie, previsioni settimanali e mensili con minimo / base / massimo, le mappe di stagionalità e tutti i parametri usati, così ogni esecuzione è verificabile e ripetibile.</p>
+                </section>
+
+              </div>
+
+              <div class="kpi-more">
+                <h4 class="sub-title"><span data-lang="en">The data pipeline around it</span><span data-lang="it">La pipeline dati attorno al modello</span></h4>
+                <ul class="kpi-list" data-lang="en">
+                  <li><strong>Import scripts</strong> — load transaction exports, cash registers, exchange rates and group-wide data from Excel into MySQL, with robust parsing of Italian number and date formats and upserts to avoid duplicates.</li>
+                  <li><strong>Event calendar</strong> — promotions and tourism events imported day by day, to read the peaks behind the numbers.</li>
+                  <li><strong>Only active transactions</strong> — cancelled operations and records with missing currency, side or amount are filtered out before any calculation.</li>
+                </ul>
+                <ul class="kpi-list" data-lang="it">
+                  <li><strong>Script di import</strong> — caricano in MySQL da Excel gli export delle transazioni, i registri di cassa, i tassi di cambio e i dati di gruppo, con parsing robusto dei formati italiani di numeri e date e upsert per evitare duplicati.</li>
+                  <li><strong>Calendario eventi</strong> — promozioni ed eventi turistici importati giorno per giorno, per leggere i picchi dietro ai numeri.</li>
+                  <li><strong>Solo transazioni attive</strong> — operazioni annullate e record senza valuta, verso o importo vengono esclusi prima di qualsiasi calcolo.</li>
+                </ul>
+              </div>
+
+              <button class="project-close" type="button" data-closes="fx-details">
+                <span data-lang="en">Close details</span><span data-lang="it">Chiudi dettagli</span>
+                <span aria-hidden="true">↑</span>
+              </button>
+
+            </div>
+          </div>
+        </article>
+
+        <article class="project" id="project-rota">
+          <div class="project-summary">
+            <div class="project-head">
+              <p class="project-meta">
+                <span data-lang="en">Work project · Staff scheduling · 2025</span>
+                <span data-lang="it">Progetto di lavoro · Pianificazione turni · 2025</span>
+              </p>
+              <h3 class="project-title">
+                <span data-lang="en">Fair rota report — weekends, openings and holidays</span>
+                <span data-lang="it">Report equità dei turni — weekend, aperture e festività</span>
+              </h3>
+              <ul class="tags">
+                <li>Python</li>
+                <li>pandas</li>
+                <li>openpyxl</li>
+                <li><span data-lang="en">Workforce planning</span><span data-lang="it">Pianificazione del personale</span></li>
+              </ul>
+            </div>
+            <ul class="bullets" data-lang="en">
+              <li>Reads a whole year of weekly rota spreadsheets and turns them into one fairness report per person.</li>
+              <li>Counts weekends off, Sundays off, opening shifts, public holidays off and holiday weeks, as numbers and as percentages.</li>
+              <li>Used to build the next rotas on data: whoever has had fewer weekends off or more openings gets balanced first.</li>
+            </ul>
+            <ul class="bullets" data-lang="it">
+              <li>Legge un anno intero di fogli turni settimanali e li trasforma in un unico report di equità per persona.</li>
+              <li>Conta weekend di riposo, domeniche libere, turni di apertura, festività non lavorate e settimane di ferie, in numero e in percentuale.</li>
+              <li>Serve a costruire i turni successivi sui dati: chi ha avuto meno weekend liberi o più aperture viene riequilibrato per primo.</li>
+            </ul>
+          </div>
+
+          <button class="project-toggle" type="button" aria-expanded="false" aria-controls="rota-details">
+            <span class="project-toggle-label when-closed">
+              <span data-lang="en">See how it works</span><span data-lang="it">Scopri come funziona</span>
+            </span>
+            <span class="project-toggle-label when-open">
+              <span data-lang="en">Close</span><span data-lang="it">Chiudi</span>
+            </span>
+            <span class="project-toggle-icon" aria-hidden="true"></span>
+          </button>
+
+          <div class="project-details" id="rota-details" inert>
+            <div class="project-details-inner">
+
+              <p class="details-lead details-lead--first" data-lang="en">When rotas are written by hand week after week, it's hard to tell whether weekends off, early openings and public holidays are shared fairly. This script reads every weekly rota file of the year and answers with numbers, so the next rotas can be balanced instead of guessed.</p>
+              <p class="details-lead details-lead--first" data-lang="it">Quando i turni si scrivono a mano settimana dopo settimana, è difficile capire se weekend liberi, aperture e festività sono distribuiti in modo equo. Questo script legge tutti i file turni settimanali dell'anno e risponde con i numeri, così i turni successivi si possono riequilibrare invece che andare a occhio.</p>
+
+              <!-- how a rota cell is read -->
+              <div class="cellmap" aria-label="How a rota cell is read">
+                <p class="cellmap-title"><span data-lang="en">How each rota cell is read</span><span data-lang="it">Come viene letta ogni cella del foglio turni</span></p>
+                <div class="cellmap-row">
+                  <span class="cell">8.30-14</span><span class="cellmap-arrow" aria-hidden="true"></span>
+                  <span><strong data-lang="en">Shift worked</strong><strong data-lang="it">Turno lavorato</strong> <span data-lang="en">— any format: 8-14, 8.30-14, 8:30 - 14,30</span><span data-lang="it">— in qualsiasi formato: 8-14, 8.30-14, 8:30 - 14,30</span></span>
+                </div>
+                <div class="cellmap-row">
+                  <span class="cell cell--open">7-13</span><span class="cellmap-arrow" aria-hidden="true"></span>
+                  <span><strong data-lang="en">Opening shift</strong><strong data-lang="it">Turno di apertura</strong> <span data-lang="en">— a shift that starts between 5:00 and 11:00</span><span data-lang="it">— un turno che inizia tra le 5:00 e le 11:00</span></span>
+                </div>
+                <div class="cellmap-row">
+                  <span class="cell cell--rest">RIPO · RDOM · —</span><span class="cellmap-arrow" aria-hidden="true"></span>
+                  <span><strong data-lang="en">Rest day</strong><strong data-lang="it">Riposo</strong> <span data-lang="en">— rest codes, or an empty cell</span><span data-lang="it">— codici di riposo, oppure cella vuota</span></span>
+                </div>
+                <div class="cellmap-row">
+                  <span class="cell cell--leave">FERIOR</span><span class="cellmap-arrow" aria-hidden="true"></span>
+                  <span><strong data-lang="en">Holiday day</strong><strong data-lang="it">Giorno di ferie</strong> <span data-lang="en">— counts as rest, and towards a holiday week</span><span data-lang="it">— conta come riposo, e verso una settimana di ferie</span></span>
+                </div>
+              </div>
+
+              <ul class="tags tags--stack">
+                <li>Python</li><li>pandas</li><li>NumPy</li><li>openpyxl</li><li>Regex</li>
+              </ul>
+
+              <div class="logic-grid">
+
+                <section class="logic">
+                  <p class="logic-num">01</p>
+                  <h4>
+                    <span data-lang="en">Reading messy spreadsheets</span>
+                    <span data-lang="it">Leggere fogli scritti a mano</span>
+                  </h4>
+                  <p data-lang="en">Each weekly file has the week number in its header and one block of columns per day (name + shift). The script finds the real date of every cell from year, ISO week and weekday.</p>
+                  <p data-lang="it">Ogni file settimanale ha il numero della settimana nell'intestazione e un blocco di colonne per ogni giorno (nome + turno). Lo script ricava la data reale di ogni cella da anno, settimana ISO e giorno.</p>
+                  <p class="logic-note" data-lang="en"><strong>Name normalisation:</strong> notes in brackets, hour counts like "6H", numbers and symbols are stripped and names are upper-cased, so the same person is recognised in every week however their name was typed.</p>
+                  <p class="logic-note" data-lang="it"><strong>Normalizzazione dei nomi:</strong> note tra parentesi, ore tipo "6H", numeri e simboli vengono tolti e i nomi messi in maiuscolo, così la stessa persona viene riconosciuta in ogni settimana, comunque sia stato scritto il nome.</p>
+                </section>
+
+                <section class="logic">
+                  <p class="logic-num">02</p>
+                  <h4>
+                    <span data-lang="en">Public holidays, Easter included</span>
+                    <span data-lang="it">Festività, Pasqua compresa</span>
+                  </h4>
+                  <p data-lang="en">Every date is checked against the Italian public holidays of that year. The fixed ones are simple; Easter moves every year, so it is calculated with the Gregorian computus algorithm, and Easter Monday follows from it.</p>
+                  <p data-lang="it">Ogni data viene confrontata con le festività italiane di quell'anno. Quelle fisse sono semplici; la Pasqua cambia ogni anno, quindi viene calcolata con l'algoritmo del computus gregoriano, e da lì il Lunedì dell'Angelo.</p>
+                  <p class="logic-note" data-lang="en">A separate sheet lists every public holiday taken off, by date and person, so it is clear who had Christmas, Easter or mid-August off.</p>
+                  <p class="logic-note" data-lang="it">Un foglio a parte elenca ogni festività non lavorata, per data e persona, così è chiaro chi ha avuto libero Natale, Pasqua o Ferragosto.</p>
+                </section>
+
+                <section class="logic">
+                  <p class="logic-num">03</p>
+                  <h4>
+                    <span data-lang="en">Rules that keep the numbers honest</span>
+                    <span data-lang="it">Regole che rendono i numeri onesti</span>
+                  </h4>
+                  <div class="formula">
+                    <p><span data-lang="en">Holiday week</span><span data-lang="it">Settimana di ferie</span> = <span data-lang="en">4 or more holiday days Monday–Friday</span><span data-lang="it">almeno 4 giorni di ferie dal lunedì al venerdì</span></p>
+                    <p><span data-lang="en">Week worked</span><span data-lang="it">Settimana lavorata</span> = <span data-lang="en">at least 2 weekdays worked, and not a holiday week</span><span data-lang="it">almeno 2 giorni feriali lavorati, e non settimana di ferie</span></p>
+                    <p><span data-lang="en">Weekend off</span><span data-lang="it">Weekend di riposo</span> = <span data-lang="en">Saturday and Sunday both rest</span><span data-lang="it">sabato e domenica entrambi di riposo</span></p>
+                  </div>
+                  <p class="logic-note" data-lang="en">The weekend attached to a holiday week is marked as rest, and holiday weeks aren't counted as weeks worked: a fortnight's leave shouldn't look like two "free weekends" earned in the rota. A rest day can never count as an opening.</p>
+                  <p class="logic-note" data-lang="it">Il weekend legato a una settimana di ferie è segnato come riposo, e le settimane di ferie non contano come settimane lavorate: due settimane di ferie non devono sembrare due "weekend liberi" guadagnati nei turni. Un giorno di riposo non può mai contare come apertura.</p>
+                </section>
+
+                <section class="logic">
+                  <p class="logic-num">04</p>
+                  <h4>
+                    <span data-lang="en">The report, one row per person</span>
+                    <span data-lang="it">Il report, una riga per persona</span>
+                  </h4>
+                  <div class="formula">
+                    <p><span data-lang="en">% weekends off</span><span data-lang="it">% weekend di riposo</span> = <span data-lang="en">weekends off ÷ weeks worked</span><span data-lang="it">weekend di riposo ÷ settimane lavorate</span></p>
+                    <p><span data-lang="en">% openings</span><span data-lang="it">% aperture</span> = <span data-lang="en">opening shifts ÷ days worked</span><span data-lang="it">turni di apertura ÷ giorni lavorati</span></p>
+                  </div>
+                  <p data-lang="en">Plus weeks worked, holiday weeks, Sundays off, public holidays off, days worked and opening shifts — exported to Excel with the percentages already formatted, ready to compare side by side.</p>
+                  <p data-lang="it">In più settimane lavorate, settimane di ferie, domeniche di riposo, festività non lavorate, giorni lavorati e turni di apertura, esportati in Excel con le percentuali già formattate, pronti da confrontare fianco a fianco.</p>
+                </section>
+
+              </div>
+
+              <button class="project-close" type="button" data-closes="rota-details">
+                <span data-lang="en">Close details</span><span data-lang="it">Chiudi dettagli</span>
+                <span aria-hidden="true">↑</span>
+              </button>
+
+            </div>
+          </div>
+        </article>
+
+        <article class="project" id="project-store">
+          <div class="project-summary">
+            <div class="project-head">
+              <p class="project-meta">
+                <span data-lang="en">Work project · Branch inventory · 2025</span>
+                <span data-lang="it">Progetto di lavoro · Magazzino di filiale · 2025</span>
+              </p>
+              <h3 class="project-title">
+                <span data-lang="en">Branch stock app with automatic reordering</span>
+                <span data-lang="it">App di magazzino con riordino automatico</span>
+              </h3>
+              <ul class="tags">
+                <li>Python</li>
+                <li>SQLite</li>
+                <li>Tkinter</li>
+                <li><span data-lang="en">Inventory control</span><span data-lang="it">Gestione scorte</span></li>
+              </ul>
+            </div>
+            <ul class="bullets" data-lang="en">
+              <li>A desktop app for a branch's supplies: every load and issue is recorded with the operator's PIN, and stock is always calculated from that history.</li>
+              <li>A MIN / MAX rule in cartons decides what to reorder and fills in the company order form automatically.</li>
+              <li>Manager-only reports on order spend, toner and how often each item moves.</li>
+            </ul>
+            <ul class="bullets" data-lang="it">
+              <li>Un'applicazione desktop per le forniture di una filiale: ogni carico e scarico è registrato con il PIN dell'operatore, e lo stock è sempre calcolato da quello storico.</li>
+              <li>Una regola MIN / MAX in colli decide cosa riordinare e compila in automatico il modulo d'ordine aziendale.</li>
+              <li>Report riservati al manager su spesa per ordine, toner e frequenza di movimento di ogni articolo.</li>
+            </ul>
+          </div>
+
+          <button class="project-toggle" type="button" aria-expanded="false" aria-controls="store-details">
+            <span class="project-toggle-label when-closed">
+              <span data-lang="en">See how it works</span><span data-lang="it">Scopri come funziona</span>
+            </span>
+            <span class="project-toggle-label when-open">
+              <span data-lang="en">Close</span><span data-lang="it">Chiudi</span>
+            </span>
+            <span class="project-toggle-icon" aria-hidden="true"></span>
+          </button>
+
+          <div class="project-details" id="store-details" inert>
+            <div class="project-details-inner">
+
+              <p class="details-lead details-lead--first" data-lang="en">For branch supplies — paper, toner and other consumables — the app brings together a movement ledger, clear reorder thresholds per item and an order file that is ready to send, with three tabs: Movements, Stock and Manager.</p>
+              <p class="details-lead details-lead--first" data-lang="it">Per le forniture di filiale (carta, toner e altri materiali di consumo) l'app mette insieme un registro dei movimenti, soglie di riordino chiare per ogni articolo e un file d'ordine pronto da inviare, su tre schede: Movimenti, Stock e Manager.</p>
+
+              <!-- worked example of the reorder rule -->
+              <figure class="gauge" aria-label="Reorder rule example">
+                <figcaption class="cellmap-title"><span data-lang="en">The reorder rule, on an example item</span><span data-lang="it">La regola di riordino, su un articolo d'esempio</span></figcaption>
+                <div class="gauge-track">
+                  <span class="gauge-stock" style="width: 23.33%"></span>
+                  <span class="gauge-order" style="left: 23.33%; width: 66.67%"></span>
+                  <span class="gauge-mark gauge-mark--min" style="left: 33.33%"><span>MIN 2</span></span>
+                  <span class="gauge-mark gauge-mark--max" style="left: 83.33%"><span>MAX 5</span></span>
+                </div>
+                <div class="gauge-scale" aria-hidden="true">
+                  <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span>
+                </div>
+                <div class="gauge-legend">
+                  <span class="gauge-key"><i class="gauge-dot gauge-dot--stock"></i><span data-lang="en">In stock: 1.4 cartons</span><span data-lang="it">In magazzino: 1,4 colli</span></span>
+                  <span class="gauge-key"><i class="gauge-dot gauge-dot--order"></i><span data-lang="en">Ordered: ⌈5 − 1.4⌉ = 4 cartons</span><span data-lang="it">Ordinati: ⌈5 − 1,4⌉ = 4 colli</span></span>
+                </div>
+              </figure>
+
+              <ul class="tags tags--stack">
+                <li>Python</li><li>Tkinter</li><li>SQLite</li><li>openpyxl</li><li><span data-lang="en">PyInstaller-ready</span><span data-lang="it">Pronta per PyInstaller</span></li>
+              </ul>
+
+              <div class="logic-grid">
+
+                <section class="logic">
+                  <p class="logic-num">01</p>
+                  <h4>
+                    <span data-lang="en">Stock as a ledger</span>
+                    <span data-lang="it">Lo stock come registro</span>
+                  </h4>
+                  <p data-lang="en">Nobody edits a stock number by hand. Every load or issue is a row with time, operator PIN, item, signed quantity and note, and stock is simply the sum of those rows: always traceable, always explainable.</p>
+                  <p data-lang="it">Nessuno modifica a mano un numero di stock. Ogni carico o scarico è una riga con ora, PIN dell'operatore, articolo, quantità con segno e nota, e lo stock è semplicemente la somma di quelle righe: sempre tracciabile, sempre spiegabile.</p>
+                  <p class="logic-note" data-lang="en">Loads are entered in cartons (as they arrive) and converted to units; issues are entered in single units (as they're used). The starting inventory is imported the same way: full cartons × units per carton + loose units, recorded as one opening movement.</p>
+                  <p class="logic-note" data-lang="it">I carichi si inseriscono in colli (come arrivano) e vengono convertiti in unità; gli scarichi in singole unità (come si usano). Anche l'inventario iniziale entra così: colli interi × unità per collo + unità sciolte, registrati come un unico movimento di apertura.</p>
+                </section>
+
+                <section class="logic">
+                  <p class="logic-num">02</p>
+                  <h4>
+                    <span data-lang="en">Units vs cartons</span>
+                    <span data-lang="it">Unità e colli</span>
+                  </h4>
+                  <p data-lang="en">Items are ordered in cartons but used one by one, so the app tracks both.</p>
+                  <p data-lang="it">Gli articoli si ordinano a colli ma si usano uno alla volta, quindi l'app tiene traccia di entrambi.</p>
+                  <div class="formula">
+                    <p><span data-lang="en">Cartons in stock</span><span data-lang="it">Colli in magazzino</span> = <span data-lang="en">units ÷ units per carton</span><span data-lang="it">unità ÷ unità per collo</span></p>
+                    <p><span data-lang="en">Displayed cartons</span><span data-lang="it">Colli visualizzati</span> = <span data-lang="en">below 0.5 → 0 · 0.5 to 1 → 1 · above 1 → rounded</span><span data-lang="it">sotto 0,5 → 0 · da 0,5 a 1 → 1 · oltre 1 → arrotondato</span></p>
+                  </div>
+                  <p class="logic-note" data-lang="en">The same rounding is used on screen and in the order, so what the manager sees is exactly what triggers a reorder.</p>
+                  <p class="logic-note" data-lang="it">Lo stesso arrotondamento vale a video e nell'ordine, così quello che il manager vede è esattamente ciò che fa scattare un riordino.</p>
+                </section>
+
+                <section class="logic">
+                  <p class="logic-num">03</p>
+                  <h4>
+                    <span data-lang="en">The reorder rule</span>
+                    <span data-lang="it">La regola di riordino</span>
+                  </h4>
+                  <div class="formula">
+                    <p><span data-lang="en">Reorder when</span><span data-lang="it">Si riordina se</span> = <span data-lang="en">displayed cartons &lt; MIN</span><span data-lang="it">colli visualizzati &lt; MIN</span></p>
+                    <p><span data-lang="en">Cartons to order</span><span data-lang="it">Colli da ordinare</span> = <span data-lang="en">⌈MAX − actual cartons⌉</span><span data-lang="it">⌈MAX − colli reali⌉</span></p>
+                  </div>
+                  <p data-lang="en">The order quantity is computed on the actual (unrounded) stock, so it tops up to MAX without overshooting it by more than a fraction of a carton. Items with no MAX are never ordered, and toner is kept out of the standard order form and handled on its own.</p>
+                  <p data-lang="it">La quantità da ordinare è calcolata sullo stock reale (non arrotondato), così si torna al MAX senza superarlo di più di una frazione di collo. Gli articoli senza MAX non vengono mai ordinati, e il toner resta fuori dal modulo standard e si gestisce a parte.</p>
+                  <p class="logic-note" data-lang="en">The app then opens the company order template, clears old quantities, writes cartons next to each SKU plus branch code, manager PIN and date, and saves a new dated order file.</p>
+                  <p class="logic-note" data-lang="it">Poi l'app apre il modulo d'ordine aziendale, cancella le vecchie quantità, scrive i colli accanto a ogni SKU insieme a codice filiale, PIN del manager e data, e salva un nuovo file d'ordine datato.</p>
+                </section>
+
+                <section class="logic">
+                  <p class="logic-num">04</p>
+                  <h4>
+                    <span data-lang="en">Roles, setup and safe imports</span>
+                    <span data-lang="it">Ruoli, configurazione e import sicuri</span>
+                  </h4>
+                  <p data-lang="en">A first-run wizard sets the branch code and creates the manager. Operators and managers sign in with a 4–6 digit PIN; only a manager can add operators, import data, generate orders and run reports.</p>
+                  <p data-lang="it">Una procedura guidata al primo avvio imposta il codice filiale e crea il manager. Operatori e manager accedono con un PIN di 4–6 cifre; solo il manager può aggiungere operatori, importare dati, generare ordini e report.</p>
+                  <p class="logic-note" data-lang="en">The item master is one shared file for all branches: the import keeps only the rows for this branch and reads messy values such as "4 pz", "12 RISME" or "4,0". New database columns are added automatically on start-up, and paths resolve correctly whether it runs as a script or as a packaged executable.</p>
+                  <p class="logic-note" data-lang="it">Il master articoli è un unico file condiviso tra tutte le filiali: l'import tiene solo le righe della filiale e legge valori scritti in modo disordinato come "4 pz", "12 RISME" o "4,0". Le nuove colonne del database vengono aggiunte in automatico all'avvio, e i percorsi funzionano sia come script sia come eseguibile impacchettato.</p>
+                </section>
+
+              </div>
+
+              <div class="kpi-more">
+                <h4 class="sub-title"><span data-lang="en">Manager reports</span><span data-lang="it">Report per il manager</span></h4>
+                <ul class="kpi-list" data-lang="en">
+                  <li><strong>Spend per order</strong> — reads every generated order file and prices it against the price list (price per carton): date, progressive order number and total spend.</li>
+                  <li><strong>Toner</strong> — stock in units and cartons against MIN / MAX, plus every toner movement, in its own report.</li>
+                  <li><strong>Movement frequency</strong> — for each item: number of movements, first and last date, and the average number of days between movements, to read how fast it is consumed.</li>
+                  <li><strong>Stock tab</strong> — live stock in units and cartons next to each item's MIN and MAX, for a quick check before ordering.</li>
+                </ul>
+                <ul class="kpi-list" data-lang="it">
+                  <li><strong>Spesa per ordine</strong> — legge ogni file d'ordine generato e lo valorizza con il listino (prezzo per collo): data, numero d'ordine progressivo e spesa totale.</li>
+                  <li><strong>Toner</strong> — stock in unità e colli rispetto a MIN / MAX, più tutti i movimenti dei toner, in un report dedicato.</li>
+                  <li><strong>Frequenza dei movimenti</strong> — per ogni articolo: numero di movimenti, prima e ultima data, e giorni medi tra un movimento e l'altro, per capire quanto velocemente si consuma.</li>
+                  <li><strong>Scheda Stock</strong> — stock aggiornato in unità e colli accanto a MIN e MAX di ogni articolo, per un controllo rapido prima di ordinare.</li>
+                </ul>
+              </div>
+
+              <button class="project-close" type="button" data-closes="store-details">
+                <span data-lang="en">Close details</span><span data-lang="it">Chiudi dettagli</span>
+                <span aria-hidden="true">↑</span>
+              </button>
+
+            </div>
+          </div>
+        </article>
+        </div>
+
+        <h3 class="sub-title">
+          <span data-lang="en">Digital business cards</span><span data-lang="it">Biglietti da visita digitali</span>
+        </h3>
+        <p class="sites-intro">
+          <span data-lang="en">Not full websites so much as tech business cards: a single page, quick to open and share, that introduces a local business online and leads customers to get in touch. Hand-coded in HTML, CSS and JavaScript, with an animation people remember.</span>
+          <span data-lang="it">Più che siti veri e propri, sono biglietti da visita tecnologici: una pagina sola, veloce da aprire e da condividere, che porta online un'attività locale e accompagna il cliente fino al contatto. Scritti a mano in HTML, CSS e JavaScript, con un'animazione che si fa ricordare.</span>
+        </p>
+
+        <div class="sites">
+
+          <article class="site">
+            <a class="site-shot" href="https://rosaraia12-svg.github.io/HOP/" target="_blank" rel="noopener">
+              <span class="site-bar" aria-hidden="true"><i></i><i></i><i></i></span>
+              <img src="./assets/sites/hop.webp" width="1200" height="750" loading="lazy" decoding="async"
+                   alt="House of Pump digital business card: dark hero with the headline More than a gym, in yellow and white." />
+            </a>
+            <div class="site-body">
+              <p class="site-meta">
+                <span class="site-status site-status--live"><span data-lang="en">Live</span><span data-lang="it">Online</span></span>
+                <span data-lang="en">Personal training studio · Novi Ligure</span><span data-lang="it">Studio di personal training · Novi Ligure</span>
+              </p>
+              <h4 class="site-title">House of Pump</h4>
+              <p class="site-desc" data-lang="en">The digital business card of Tino's training studio, paired with <strong>NFC gadgets</strong>: tap a phone on one and the page opens straight away, so every gadget handed out leads back to the studio.</p>
+              <p class="site-desc" data-lang="it">Il biglietto da visita digitale dello studio di Tino, abbinato a <strong>gadget NFC</strong>: basta avvicinare il telefono e la pagina si apre subito, così ogni gadget distribuito riporta allo studio.</p>
+              <ul class="bullets site-points" data-lang="en">
+                <li>A 300-frame sequence of weight plates tied to scrolling (GSAP ScrollTrigger), revealing the services in four alternating phases.</li>
+                <li>Loads every other frame on phones, halving memory so scrolling stays smooth.</li>
+                <li>Animated hero, running marquee and booking through Instagram DMs.</li>
+              </ul>
+              <ul class="bullets site-points" data-lang="it">
+                <li>Una sequenza di 300 fotogrammi di dischi di ghisa legata allo scroll (GSAP ScrollTrigger), che svela i servizi in quattro fasi alternate.</li>
+                <li>Sul telefono carica un fotogramma sì e uno no, dimezzando la memoria per mantenere lo scroll fluido.</li>
+                <li>Hero animata, scritta scorrevole e prenotazione via DM Instagram.</li>
+              </ul>
+              <ul class="tags">
+                <li>HTML · CSS · JS</li><li>GSAP</li><li>Canvas</li><li>NFC</li>
+              </ul>
+              <a class="site-link" href="https://rosaraia12-svg.github.io/HOP/" target="_blank" rel="noopener">
+                <span data-lang="en">Open the card</span><span data-lang="it">Apri il biglietto</span> ↗
+              </a>
+            </div>
+          </article>
+
+          <article class="site">
+            <div class="site-shot">
+              <span class="site-bar" aria-hidden="true"><i></i><i></i><i></i></span>
+              <img src="./assets/sites/anastasis.webp" width="1200" height="750" loading="lazy" decoding="async"
+                   alt="Anastasis Nail Rituals digital business card: the nail studio's workstation in front of a terracotta arched wall." />
+            </div>
+            <div class="site-body">
+              <p class="site-meta">
+                <span class="site-status"><span data-lang="en">In progress</span><span data-lang="it">In corso</span></span>
+                <span data-lang="en">Nail studio</span><span data-lang="it">Studio unghie</span>
+              </p>
+              <h4 class="site-title">Anastasis Nail Rituals</h4>
+              <p class="site-desc" data-lang="en">A one-scroll experience: as you scroll, the camera walks into the studio up to the workstation, a glass panel with the services rises, then the footage plays back out.</p>
+              <p class="site-desc" data-lang="it">Un'esperienza in un solo scroll: scorrendo, la telecamera entra nello studio fino alla postazione, sale un pannello in vetro con i servizi, poi il video torna indietro.</p>
+              <ul class="bullets site-points" data-lang="en">
+                <li>The video is split into 120 WebP frames drawn on a canvas, because scrubbing a real video is unreliable on iPhone.</li>
+                <li>Frosted "liquid glass" panel with the services (sculpting, refill) and booking via WhatsApp and Instagram.</li>
+              </ul>
+              <ul class="bullets site-points" data-lang="it">
+                <li>Il video è scomposto in 120 fotogrammi WebP disegnati su canvas, perché far scorrere un video vero è inaffidabile su iPhone.</li>
+                <li>Pannello "liquid glass" con i servizi (ricostruzione, refill) e prenotazione su WhatsApp e Instagram.</li>
+              </ul>
+              <ul class="tags">
+                <li>HTML · CSS · JS</li><li>Canvas</li><li><span data-lang="en">Scroll-driven</span><span data-lang="it">Guidato dallo scroll</span></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="site">
+            <div class="site-shot">
+              <span class="site-bar" aria-hidden="true"><i></i><i></i><i></i></span>
+              <img src="./assets/sites/gelashpmu.webp" width="1200" height="750" loading="lazy" decoding="async"
+                   alt="Ge.LashPmu digital business card: an illustrated eye with long lashes on a pink background, with a glass card describing the formula." />
+            </div>
+            <div class="site-body">
+              <p class="site-meta">
+                <span class="site-status"><span data-lang="en">In progress</span><span data-lang="it">In corso</span></span>
+                <span data-lang="en">Lash &amp; permanent make-up</span><span data-lang="it">Ciglia e trucco permanente</span>
+              </p>
+              <h4 class="site-title">Ge.LashPmu</h4>
+              <p class="site-desc" data-lang="en">An intro in two acts: an illustrated eye opens, then the brand signature writes itself in cursive, and the page settles on the open gaze.</p>
+              <p class="site-desc" data-lang="it">Un'intro in due atti: un occhio illustrato si apre, poi la firma del brand si scrive in corsivo, e la pagina si ferma sullo sguardo aperto.</p>
+              <ul class="bullets site-points" data-lang="en">
+                <li>A "liquid glass" card that truly refracts the video behind it: each frame is redrawn on a canvas under an SVG displacement filter.</li>
+                <li>Safari-proof: blend modes on the wrapper, forced loading, a watchdog and still-frame fallbacks; accessible full-screen menu.</li>
+              </ul>
+              <ul class="bullets site-points" data-lang="it">
+                <li>Una card "liquid glass" che rifrange davvero il video sottostante: ogni fotogramma viene ridisegnato su canvas sotto un filtro SVG di distorsione.</li>
+                <li>A prova di Safari: blend mode sul contenitore, caricamento forzato, controllo di sicurezza e fotogrammi fissi di riserva; menu a schermo intero accessibile.</li>
+              </ul>
+              <ul class="tags">
+                <li>HTML · CSS · JS</li><li>Video</li><li><span data-lang="en">SVG filters</span><span data-lang="it">Filtri SVG</span></li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+
+        <h3 class="sub-title">
+          <span data-lang="en">Experience</span><span data-lang="it">Esperienza lavorativa</span>
+        </h3>
+
+        <ol class="timeline">
+          <li class="job">
+            <p class="job-date">
+              <span data-lang="en">Mar 2022 – Jun 2026</span><span data-lang="it">Mar 2022 – Giu 2026</span>
+            </p>
+            <div class="job-body">
+              <h4 class="job-role">Branch Manager <span class="job-co">Maccorp Italiana Srl</span></h4>
+              <ul class="bullets" data-lang="en">
+                <li>Ongoing analysis of operational and commercial KPIs (volumes, number of transactions, margins) to monitor branch performance.</li>
+                <li>Decision support for staff planning, based on customer flows and weekly patterns.</li>
+                <li>Data-driven resource allocation, reducing operational inefficiencies.</li>
+                <li>Worked with the Area Manager on day-to-day operations and team coordination.</li>
+              </ul>
+              <ul class="bullets" data-lang="it">
+                <li>Analisi continuativa dei KPI operativi e commerciali (volumi, numero transazioni, marginalità) per il monitoraggio delle performance di punto vendita.</li>
+                <li>Supporto decisionale nella pianificazione del personale tramite valutazione dei flussi di clientela e delle dinamiche settimanali.</li>
+                <li>Ottimizzazione dell'allocazione delle risorse con logiche data-driven, riducendo le inefficienze operative.</li>
+                <li>Collaborazione con l'Area Manager nella gestione operativa e nel coordinamento del gruppo.</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="job">
+            <p class="job-date">
+              <span data-lang="en">May 2021 – Feb 2022</span><span data-lang="it">Mag 2021 – Feb 2022</span>
+            </p>
+            <div class="job-body">
+              <h4 class="job-role">Lead <span class="job-co">Nike</span></h4>
+              <ul class="bullets" data-lang="en">
+                <li>Supported visual merchandising and restocking, in line with demand trends and stock levels.</li>
+                <li>Contributed to sales targets by monitoring KPIs (conversion rate, average ticket, volumes).</li>
+                <li>Observed and interpreted customer behaviour to improve commercial effectiveness.</li>
+              </ul>
+              <ul class="bullets" data-lang="it">
+                <li>Supporto alle attività di visual merchandising e riassortimento (restocking), in linea con l'andamento della domanda e dei livelli di stock.</li>
+                <li>Contributo al raggiungimento degli obiettivi di vendita attraverso il monitoraggio dei KPI (conversion rate, scontrino medio, volumi).</li>
+                <li>Osservazione e interpretazione dei comportamenti della clientela per ottimizzare l'efficacia commerciale.</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="job">
+            <p class="job-date">
+              <span data-lang="en">Aug 2017 – Mar 2022</span><span data-lang="it">Ago 2017 – Mar 2022</span>
+            </p>
+            <div class="job-body">
+              <h4 class="job-role">
+                <span data-lang="en">Teller</span><span data-lang="it">Operatore di Sportello</span>
+                <span class="job-co">Maccorp Italiana Srl</span>
+              </h4>
+              <ul class="bullets" data-lang="en">
+                <li>Handled financial transactions (currency exchange and international money transfers), with attention to daily cash flows and document checks.</li>
+              </ul>
+              <ul class="bullets" data-lang="it">
+                <li>Gestione di operazioni finanziarie (cambio valuta e trasferimenti internazionali) con attenzione ai flussi di cassa giornalieri e verifica documentale.</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="job job--earlier">
+            <p class="job-date">2015 – 2021</p>
+            <div class="job-body">
+              <h4 class="job-role">
+                <span data-lang="en">Earlier experience</span><span data-lang="it">Esperienze precedenti</span>
+              </h4>
+              <ul class="bullets" data-lang="en">
+                <li><strong>Receptionist</strong> · Soc. Agricola L.R. · Jul 2019 – Dec 2021 (part-time, alongside Maccorp) and Feb – Jun 2017 — front office and appointment scheduling.</li>
+                <li><strong>Sales Assistant</strong> · Twin Set di Simona Barbieri (2016) and Pollini Retail (2015–2016) — assisted selling and visual merchandising in fashion retail.</li>
+                <li><strong>Mail Carrier</strong> · Poste Italiane · Sep 2016 – Jan 2017.</li>
+              </ul>
+              <ul class="bullets" data-lang="it">
+                <li><strong>Receptionist</strong> · Soc. Agricola L.R. · Luglio 2019 – Dicembre 2021 (part-time, in parallelo all'impiego in Maccorp) e Febbraio – Giugno 2017 — gestione front office e agenda appuntamenti.</li>
+                <li><strong>Assistente alle Vendite</strong> · Twin Set di Simona Barbieri (2016) e Pollini Retail (2015–2016) — vendita assistita e visual merchandising in contesti retail fashion.</li>
+                <li><strong>Portalettere</strong> · Poste Italiane · Settembre 2016 – Gennaio 2017.</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================ ABOUT ============================ -->
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="wrap">
+        <p class="eyebrow">02 — <span data-lang="en">About</span><span data-lang="it">Chi sono</span></p>
+        <h2 class="section-title" id="about-title">
+          <span data-lang="en">Every task is a process to <em>improve</em>.</span>
+          <span data-lang="it">Ogni mansione è un processo da <em>migliorare</em>.</span>
+        </h2>
+
+        <div class="about-grid">
+          <div class="about-profile">
+            <p class="about-lead" data-lang="en">Whatever task I'm given, I start from the same question: where are time and money being lost? Then I look for the technology that cuts costs, optimises spending or grows revenue — and I measure the result with numbers.</p>
+            <p class="about-lead" data-lang="it">Qualunque mansione mi venga affidata, parto dalla stessa domanda: dove si perdono tempo e denaro? Poi cerco la soluzione tecnologica che riduce i costi, ottimizza le spese o fa crescere le entrate, e ne misuro il risultato con i numeri.</p>
+
+            <p data-lang="en">My ground is <strong>management control</strong>: contribution margins, allocation of fixed and variable costs, operational and commercial KPIs, year-end projections. In over 10 years across retail and financial services I've learned that data is only worth something when it becomes a decision — how many people to put on shift, how much currency to order, which membership really pays.</p>
+            <p data-lang="it">Il mio terreno è il <strong>controllo di gestione</strong>: margini di contribuzione, ripartizione dei costi fissi e variabili, KPI operativi e commerciali, proiezioni di fine anno. In oltre 10 anni tra retail e servizi finanziari ho imparato che un dato vale qualcosa solo quando diventa una decisione: quante persone mettere in turno, quanta valuta ordinare, quale abbonamento conviene davvero.</p>
+
+            <p data-lang="en">Every project in this portfolio started from a concrete problem or a cost to bring down: a stock room to keep under control, currency orders to plan, rotas to share out fairly, a gym that wanted to know its real margins, local businesses to bring online. I solved them with Excel, Python and SQL — also with AI-assisted coding — always with the same goal: spend less, waste less, earn more.</p>
+            <p data-lang="it">Ogni progetto in questo portfolio è nato da un problema concreto o da un costo da ridurre: un magazzino da tenere sotto controllo, ordini di valuta da pianificare, turni da distribuire in modo equo, una palestra che voleva conoscere i suoi veri margini, attività locali da portare online. Li ho risolti con Excel, Python e SQL, anche con il supporto dell'AI, sempre con lo stesso obiettivo: spendere meno, sprecare meno, guadagnare di più.</p>
+
+            <ul class="pillars">
+              <li>
+                <p class="pillar-title"><span data-lang="en">Cut costs &amp; waste</span><span data-lang="it">Ridurre costi e sprechi</span></p>
+                <p class="pillar-text">
+                  <span data-lang="en">Reorders only below MIN and priced spend per order; currency orders sized on forecasts, so cash doesn't sit idle.</span>
+                  <span data-lang="it">Riordini solo sotto il MIN e spesa per ordine valorizzata; ordini di valuta dimensionati sulle previsioni, così il contante non resta fermo.</span>
+                </p>
+                <a class="pillar-link" href="#project-store"><span data-lang="en">Stock app · Currency forecasting</span><span data-lang="it">App magazzino · Previsione valuta</span></a>
+              </li>
+              <li>
+                <p class="pillar-title"><span data-lang="en">Optimise resources &amp; spend</span><span data-lang="it">Ottimizzare risorse e spese</span></p>
+                <p class="pillar-text">
+                  <span data-lang="en">Fixed and variable costs allocated to what generates them; staff shifts, openings and holidays measured and balanced.</span>
+                  <span data-lang="it">Costi fissi e variabili attribuiti a ciò che li genera; turni, aperture e festività del personale misurati e riequilibrati.</span>
+                </p>
+                <a class="pillar-link" href="#project-tino"><span data-lang="en">Gestionale Tino · Fair rota report</span><span data-lang="it">Gestionale Tino · Equità dei turni</span></a>
+              </li>
+              <li>
+                <p class="pillar-title"><span data-lang="en">Grow revenue</span><span data-lang="it">Far crescere le entrate</span></p>
+                <p class="pillar-text">
+                  <span data-lang="en">Margins per membership type, clients that can still be taken on, expected renewals; digital business cards and NFC gadgets that bring customers in.</span>
+                  <span data-lang="it">Margini per tipologia di abbonamento, clienti ancora acquisibili, rinnovi attesi; biglietti da visita digitali e gadget NFC che portano clienti.</span>
+                </p>
+                <a class="pillar-link" href="#work"><span data-lang="en">Gestionale Tino · Digital business cards</span><span data-lang="it">Gestionale Tino · Biglietti digitali</span></a>
+              </li>
+            </ul>
+
+            <div class="edu">
+              <h3 class="sub-title"><span data-lang="en">Education</span><span data-lang="it">Istruzione</span></h3>
+              <div class="edu-item">
+                <p class="edu-title">
+                  <span data-lang="en">Bachelor's degree in Business Economics and Management</span>
+                  <span data-lang="it">Laurea Triennale in Economia e Gestione d'Impresa</span>
+                </p>
+                <p class="edu-meta">
+                  Università del Piemonte Orientale ·
+                  <span data-lang="en">in progress, expected June 2027</span>
+                  <span data-lang="it">in corso, laurea prevista giugno 2027</span>
+                </p>
+                <p class="edu-note">
+                  <span data-lang="en">Focused on financial analysis, management control and quantitative methods.</span>
+                  <span data-lang="it">Percorso focalizzato su analisi economico-finanziaria, controllo di gestione e metodi quantitativi.</span>
+                </p>
+              </div>
+              <div class="edu-item">
+                <p class="edu-title">
+                  <span data-lang="en">High-school diploma</span><span data-lang="it">Diploma di Maturità</span>
+                </p>
+                <p class="edu-meta">IIS Ciampini Boccardo – Novi Ligure · 2013</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills">
+            <div class="skill-card">
+              <h3><span data-lang="en">Technical skills</span><span data-lang="it">Competenze tecniche</span></h3>
+              <ul data-lang="en">
+                <li>Excel (pivot tables, advanced functions)</li>
+                <li>Python &amp; SQL/SQLite — AI-assisted coding (VS Code)</li>
+                <li>Tableau — personal projects, AI support on queries</li>
+                <li>PowerPoint, Word</li>
+                <li>Power BI — basics (self-taught)</li>
+                <li>Windows &amp; macOS</li>
+              </ul>
+              <ul data-lang="it">
+                <li>Excel (pivot, funzioni avanzate)</li>
+                <li>Python e SQL/SQLite — AI-assisted coding (VS Code)</li>
+                <li>Tableau — progetti personali, supporto AI sulle query</li>
+                <li>PowerPoint, Word</li>
+                <li>Power BI — nozioni base (autoapprendimento)</li>
+                <li>Windows e Mac OS</li>
+              </ul>
+            </div>
+
+            <div class="skill-card">
+              <h3><span data-lang="en">Analysis &amp; business</span><span data-lang="it">Analisi &amp; business</span></h3>
+              <ul data-lang="en">
+                <li>Operational and commercial KPI monitoring</li>
+                <li>Cash-flow analysis</li>
+                <li>Cost accounting (contribution margin)</li>
+                <li>Resource planning and optimisation</li>
+              </ul>
+              <ul data-lang="it">
+                <li>Monitoraggio KPI operativi e commerciali</li>
+                <li>Analisi flussi di cassa</li>
+                <li>Contabilità analitica (margine di contribuzione)</li>
+                <li>Pianificazione e ottimizzazione risorse</li>
+              </ul>
+            </div>
+
+            <div class="skill-card">
+              <h3><span data-lang="en">Languages</span><span data-lang="it">Lingue</span></h3>
+              <ul>
+                <li><span data-lang="en">Italian — native</span><span data-lang="it">Italiano — madrelingua</span></li>
+                <li><span data-lang="en">English — C1</span><span data-lang="it">Inglese — C1</span></li>
+              </ul>
+            </div>
+
+            <div class="skill-card">
+              <h3>Soft skills</h3>
+              <ul data-lang="en">
+                <li>Analytical thinking and problem solving</li>
+                <li>Working autonomously</li>
+                <li>Goal-oriented</li>
+                <li>Empathetic teamwork</li>
+              </ul>
+              <ul data-lang="it">
+                <li>Pensiero analitico e problem solving</li>
+                <li>Autonomia operativa</li>
+                <li>Lavoro per obiettivi</li>
+                <li>Lavoro in team con empatia</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ CONTACT ============================ -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <p class="eyebrow">03 — <span data-lang="en">Contact</span><span data-lang="it">Contatti</span></p>
+        <h2 class="section-title" id="contact-title">
+          <span data-lang="en">Let's <em>talk</em>.</span>
+          <span data-lang="it">Parliamone<em>.</em></span>
+        </h2>
+        <p class="contact-lead">
+          <span data-lang="en">For any question or information, write to me.</span>
+          <span data-lang="it">Per ogni domanda o informazione, scrivimi.</span>
+        </p>
+
+        <a class="contact-mail" href="mailto:rosa.raia12@gmail.com">rosa.raia12@gmail.com</a>
+
+        <ul class="contact-links">
+          <li><a href="https://www.linkedin.com/in/rosa-raia-a7558a143" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+          <li><span>Novi Ligure (AL), <span data-lang="en">Italy</span><span data-lang="it">Italia</span></span></li>
+        </ul>
+      </div>
+      <footer class="footer">© 2026 Rosa Raia</footer>
+    </section>
+  </main>
+
+  <script src="./site.js" defer></script>
+  <script src="./hero.js" defer></script>
+</body>
+</html>
